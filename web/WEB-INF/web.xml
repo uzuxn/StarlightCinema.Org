@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee              http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
+    
+    <servlet>
+        <servlet-name>adminLoginServ</servlet-name>
+        <servlet-class>Starlight.admin.servlet.adminLoginServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminLoginServ</servlet-name>
+        <url-pattern>/admin/adminLoginServ</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>userLoginServ</servlet-name>
+        <servlet-class>Starlight.user.servlet.userLoginServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userLoginServ</servlet-name>
+        <url-pattern>/user/userLoginServ</url-pattern>
+    </servlet-mapping>
+    
+   
+    <servlet>
+        <servlet-name>userRegServ</servlet-name>
+        <servlet-class>Starlight.user.servlet.userRegServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userRegServ</servlet-name>
+        <url-pattern>/user/userRegServ</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>movieServ</servlet-name>
+        <servlet-class>Starlight.movie.movieServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>movieServ</servlet-name>
+        <url-pattern>/movieServ</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>AdminMovieServ</servlet-name>
+        <servlet-class>Starlight.admin.servlet.AdminMovieServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminMovieServ</servlet-name>
+        <url-pattern>/admin/AdminMovieServ</url-pattern>
+    </servlet-mapping>
+    
+
+    <servlet>
+        <servlet-name>adminServ</servlet-name>
+        <servlet-class>Starlight.admin.servlet.adminServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminServ</servlet-name>
+        <url-pattern>/admin/adminServ</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>userServ</servlet-name>
+        <servlet-class>Starlight.admin.servlet.userServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userServ</servlet-name>
+        <url-pattern>/admin/userServ</url-pattern>
+    </servlet-mapping>
+    
+
+    <servlet>
+        <servlet-name>showtimeServ</servlet-name>
+        <servlet-class>Starlight.admin.servlet.showtimeServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showtimeServ</servlet-name>
+        <url-pattern>/admin/showtimeServ</url-pattern>
+    </servlet-mapping>
+    
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    
+    
+    <servlet>
+        <servlet-name>PaySucServ</servlet-name>
+        <servlet-class>Starlight.user.servlet.PaySucServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaySucServ</servlet-name>
+        <url-pattern>/user/PaySucServ</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ReservCancelServ</servlet-name>
+        <servlet-class>Starlight.user.servlet.ReservCancelServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReservCancelServ</servlet-name>
+        <url-pattern>/user/ReservCancelServ</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>logoutServ</servlet-name>
+        <servlet-class>Starlight.user.servlet.logoutServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutServ</servlet-name>
+        <url-pattern>/user/logoutServ</url-pattern>
+    </servlet-mapping>
+     
+     
+     <servlet>
+        <servlet-name>reportServ</servlet-name>
+        <servlet-class>Starlight.admin.servlet.reportServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>reportServ</servlet-name>
+        <url-pattern>/reportServ</url-pattern>
+    </servlet-mapping>
+     
+</web-app>

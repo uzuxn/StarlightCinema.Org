@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Cinema - Your Ultimate Movie Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f112334;
+            color: #ffffff;
+            background-image: url(https://img1.wallspic.com/crops/9/6/3/3/6/163369/163369-nature-deer-natural_environment-natural_landscape-antler-1920x1080.png);
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15,17,35,0.9) 0%, #242949e6 100%);
+        }
+:root {
+    --clock-size: 1; /* Default size (1 = normal, 0.5 = half, 2 = double) */
+}
+
+.clock {
+    position: relative;
+    font-family: monaco, consolas, "courier new", monospace;
+    font-size: calc(1.4rem * var(--clock-size));
+    line-height: calc(1.375 * var(--clock-size));
+}
+
+.clock:before,
+.clock:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    content: ':';
+    z-index: 2;
+    line-height: calc(1.15 * var(--clock-size));
+    color: #333;
+}
+
+.clock:before {
+    left: calc(2.325em * var(--clock-size));
+}
+
+.clock:after {
+    right: calc(2.325em * var(--clock-size));
+}
+
+.clock span {
+    position: relative;
+    display: inline-block;
+    padding: 0 calc(0.25em * var(--clock-size));
+    margin: 0 calc(0.06125em * var(--clock-size));
+    z-index: 1;
+
+    -webkit-transform: perspective(750px);
+    -moz-transform: perspective(750px);
+    -ms-transform: perspective(750px);
+    transform: perspective(750px);
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.clock span:first-child {
+    margin-left: 0;
+}
+
+.clock span:last-child {
+    margin-right: 0;
+}
+
+.clock span:nth-child(2),
+.clock span:nth-child(4) {
+    margin-right: calc(0.3em * var(--clock-size));
+}
+
+.clock span:nth-child(3),
+.clock span:nth-child(5) {
+    margin-left: calc(0.3em * var(--clock-size));
+}
+
+.clock span:before,
+.clock span:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: #eee;
+    text-shadow: 0 calc(1px * var(--clock-size)) 0 #fff;
+    background: #333;
+    border-radius: calc(0.125em * var(--clock-size));
+    outline: calc(1px * var(--clock-size)) solid transparent; /* fix jagged edges in FF */
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-transition: -webkit-transform 0.75s, opacity 0.75s;
+    -moz-transition: -moz-transform 0.75s, opacity 0.75s;
+    -ms-transition: -ms-transform 0.75s, opacity 0.75s;
+    transition: transform 0.75s, opacity 0.75s;
+}
+
+.clock span:before {
+    opacity: 1;
+    z-index: 1;
+    content: attr(data-old);
+
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+
+    -webkit-transform: translate3d(0, 0, 0) rotateX(0);
+    -moz-transform: translate3d(0, 0, 0) rotateX(0);
+    -ms-transform: translate3d(0, 0, 0) rotateX(0);
+    transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+.clock span:after {
+    opacity: 0;
+    z-index: 2;
+    content: attr(data-now);
+
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+
+    -webkit-transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+    -moz-transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+    -ms-transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+    transform: translate3d(0, -102.5%, 0) rotateX(90deg);
+}
+
+.clock .flip:before {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+    -moz-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+    -ms-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+    transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+}
+
+.clock .flip:after {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) rotateX(0);
+    -moz-transform: translate3d(0, 0, 0) rotateX(0);
+    -ms-transform: translate3d(0, 0, 0) rotateX(0);
+    transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+    </style>
+</head>
+<body class="bg-[#0f1123] text-white">
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 bg-[#0f1123] shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            
+            <!-- Logo Section-->
+            <div class="flex items-center justify-center">
+                <img src="image\logo2.png" alt="Starlight Cinema Logo" class="h-16 w-16 sm:h-20 sm:w-20 md:h-16 md:w-16 mr-4">
+                <h1 class="text-2xl font-bold text-white">StarLight Cinema</h1>
+            </div>    
+            <!-- Navigations) -->
+            <div class="flex-1">
+                <div class="flex justify-center space-x-6">
+                    <a href="index.html" class="text-white hover:text-blue-400 transition">Home</a>
+                    <a href="#movies" class="text-white hover:text-blue-400 transition">Movies</a>
+                    <a href="#showtimes" class="text-white hover:text-blue-400 transition">Showtimes</a>
+                    
+                </div>
+            </div>
+    
+            <!-- Right Section (Login Buttons) -->
+            <div class="flex items-center space-x-6">
+                <a href="admin/adminlogin.jsp" class="text-white hover:text-blue-400 transition">Admin Login</a>
+                <a href="user/Userlogin.jsp" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                    User Login / Register
+                </a>
+            </div>
+    
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <header class="relative h-screen hero-gradient flex items-center">
+        <div class="container mx-auto px-4 z-10">
+            <div class="max-w-2xl">
+                <h2 class="text-5xl font-bold mb-6 text-white">
+                    Immerse Yourself in Cinematic Magic
+                </h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    Experience the latest blockbusters and timeless classics in ultimate comfort and style.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="user\userMovies.jsp" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                        Browse Movies
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="/api/placeholder/1920/1080" alt="Cinema Background" class="w-full h-full object-cover opacity-30">
+        </div>
+    </header>
+
+  <!--Featured Movies Section--> 
+    <section id="movies" class="py-16 bg-[#161a33]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center"><a href="user\userMovies.jsp">Now Showing Movies</a></h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="movie-card bg-[#1f2641] rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://w0.peakpx.com/wallpaper/467/882/HD-wallpaper-black-widow-movie-poster-marvel-cinematic-universe-portrait-display-movies-women-scarlett-johansson.jpg" alt="<%= movie %>" class="w-full h-96 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Black Widow</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i> 6.6/10
+                            </span>
+                            <a href="user\userMovies.jsp" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                                Browse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card bg-[#1f2641] rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgiGVlHabuN6dmgW_0E82BSRVkBETsvXdnSISCmefDySoIeQI0mak_0Le--LCe0bQK4vVrug" alt="<%= movie %>" class="w-full h-96 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Tron Legacy</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i> 6.8/10
+                            </span>
+                            <a href="user\userMovies.jsp" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                                Browse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card bg-[#1f2641] rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://w0.peakpx.com/wallpaper/925/753/HD-wallpaper-pacific-rim-robots-uprising.jpg" alt="<%= moviez %>" class="w-full h-96 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">DEADPOOL 3</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i> 7.7/10
+                            </span>
+                            <a href="user\userMovies.jsp" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                                Browse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card bg-[#1f2641] rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://th.bing.com/th/id/OIP.8C40PxkngbpDDslv4UR4bwHaLH?rs=1&pid=ImgDetMain" alt="<%= moviez %>" class="w-full h-96 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Spider-Man Far from Home</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i> 7.4/10
+                            </span>
+                            <a href="user\userMovies.jsp" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                                Browse
+                            </a>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+                            
+        <div class="mt-10 text-center">
+            <a href="user\userMovies.jsp" class="bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition">
+                Browse Movies
+            </a>
+        </div>
+        </div>
+    </section>
+  
+        <section id="showtimes" class="py-16 bg-[#1f2641]">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-10 text-center text-white">Available Showtimes</h2>
+        <div class="flex justify-center items-center">
+            <!-- Placeholder Card -->
+            <div class="bg-[#242949] p-6 rounded-lg shadow-lg text-center max-w-sm">
+                <h3 class="text-xl font-semibold text-white mb-4">Browse Movies</h3>
+                <p class="text-gray-300 mb-6">
+                    Discover showtimes by browsing through our available movies.
+                </p>
+                <a href="#movies" 
+                   class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                    Browse Movies
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Newsletter Section -->
+<section id="newsletter" class="py-16 bg-[#1f2641]">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-white">Stay Updated</h2>
+        <p class="text-gray-300 mb-8">
+            Subscribe to our newsletter for the latest updates and exclusive offers.
+        </p>
+        
+    </div>
+</section>
+
+<!-- Promotion Section -->
+<section id="promotions" class="py-16 bg-[#242949]">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center text-white">Exciting Promotions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Promotion Card 1 -->
+            <div class="bg-[#1f2641] p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-semibold text-white mb-4">50% Off on Weekdays</h3>
+                <p class="text-gray-300 mb-6">
+                    Enjoy half-price tickets for all weekday shows. Grab your tickets now!
+                </p>
+                
+            </div>
+            <!-- Promotion Card 2 -->
+            <div class="bg-[#1f2641] p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-semibold text-white mb-4">Family Movie Night</h3>
+                <p class="text-gray-300 mb-6">
+                    Bring your family for a fun-filled evening and get a special discount!
+                </p>
+                
+            </div>
+            <!-- Promotion Card 3 -->
+            <div class="bg-[#1f2641] p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-semibold text-white mb-4">Student Discounts</h3>
+                <p class="text-gray-300 mb-6">
+                    Flash your student ID and enjoy up to 30% off on all tickets.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#161a33] py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Starlight Cinema</h3>
+                    <p class="text-gray-400">Your ultimate destination for cinematic experiences.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.jsp" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#movies" class="text-gray-400 hover:text-white">Movies</a></li>
+                        <li><a href="#showtimes" class="text-gray-400 hover:text-white">Showtimes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <p class="text-gray-400">Email: support@starlightcinema.com</p>
+                    <p class="text-gray-400">Phone: +94 784818898</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500">
+                © 2024 Starlight Cinema. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll Animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        //clock
+        var Clock = (function(){
+
+var exports = function(element) {
+    this._element = element;
+    var html = '';
+    for (var i=0;i<6;i++) {
+        html += '<span>&nbsp;</span>';
+    }
+    this._element.innerHTML = html;
+    this._slots = this._element.getElementsByTagName('span');
+    this._tick();
+};
+
+exports.prototype = {
+
+    _tick:function() {
+        var time = new Date();
+        this._update(this._pad(time.getHours()) + this._pad(time.getMinutes()) + this._pad(time.getSeconds()));
+        var self = this;
+        setTimeout(function(){
+            self._tick();
+        },1000);
+    },
+
+    _pad:function(value) {
+        return ('0' + value).slice(-2);
+    },
+
+    _update:function(timeString) {
+
+        var i=0,l=this._slots.length,value,slot,now;
+        for (;i<l;i++) {
+
+            value = timeString.charAt(i);
+            slot = this._slots[i];
+            now = slot.dataset.now;
+
+            if (!now) {
+                slot.dataset.now = value;
+                slot.dataset.old = value;
+                continue;
+            }
+
+            if (now !== value) {
+                this._flip(slot,value);
+            }
+        }
+    },
+
+    _flip:function(slot,value) {
+
+        // setup new state
+        slot.classList.remove('flip');
+        slot.dataset.old = slot.dataset.now;
+        slot.dataset.now = value;
+
+        // force dom reflow
+        slot.offsetLeft;
+
+        // start flippin
+        slot.classList.add('flip');
+
+    }
+
+};
+
+return exports;
+}());
+
+var i=0,clocks = document.querySelectorAll('.clock'),l=clocks.length;
+for (;i<l;i++) {
+new Clock(clocks[i]);
+}
+    </script>
+</body>
+</html>
