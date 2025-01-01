@@ -71,4 +71,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 For any inquiries or support, please contact:
 - Email: uzman.fairos.2797@gmail.com
 
+
 ##Here are the Screenshots of the UI
+
