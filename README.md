@@ -74,3 +74,18 @@ For any inquiries or support, please contact:
 
 ##Here are the Screenshots of the UI
 
+![home1](https://github.com/user-attachments/assets/5b34a169-12f8-4bde-8ba8-f3e8c7bd3513)
+![userlogin](https://github.com/user-attachments/assets/240f99ed-560c-42c0-a39e-42fed5f536bd)
+![userreg](https://github.com/user-attachments/assets/7cfc62ac-7b70-4204-bcd7-e63a570835f4)
+![adminlogin](https://github.com/user-attachments/assets/24bd7650-52d5-4524-8410-5d41ba795bdc)
+![loginfail](https://github.com/user-attachments/assets/04005fc6-10a6-45c4-9986-d68d728c81f9)
+![adminlogerr](https://github.com/user-attachments/assets/6159db92-040b-43a1-af71-2f48d8dca807)
+![movie3](https://github.com/user-attachments/assets/797c4abb-3d1e-4238-979d-1b1e08a7d94f)
+![h
+![reserv2](https://github.com/user-attachments/assets/8bb0ffda-b944-4f85-b6d8-518791ed4bf4)
+ome2](
+![adminpnl1](https://github.com/user-attachments/assets/1a291514-e95c-467d-8be0-a560c81dde41)
+https://github.com/user-attachments/assets/c39005c0-91a6-4074-9123-b572fc76221d)
+![contact](https://github.com/user-attachments/assets/693ae8eb-c704-490f-be03-bde0e9a31302)
+![checkout1](https://github.com/user-attachments/assets/f020255a-d232-4e40-8f35-f8c8d11f0079)
+
