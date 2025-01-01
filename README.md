@@ -81,11 +81,9 @@ For any inquiries or support, please contact:
 ![loginfail](https://github.com/user-attachments/assets/04005fc6-10a6-45c4-9986-d68d728c81f9)
 ![adminlogerr](https://github.com/user-attachments/assets/6159db92-040b-43a1-af71-2f48d8dca807)
 ![movie3](https://github.com/user-attachments/assets/797c4abb-3d1e-4238-979d-1b1e08a7d94f)
-![h
+![home2](https://github.com/user-attachments/assets/c39005c0-91a6-4074-9123-b572fc76221d)
 ![reserv2](https://github.com/user-attachments/assets/8bb0ffda-b944-4f85-b6d8-518791ed4bf4)
-ome2](
 ![adminpnl1](https://github.com/user-attachments/assets/1a291514-e95c-467d-8be0-a560c81dde41)
-https://github.com/user-attachments/assets/c39005c0-91a6-4074-9123-b572fc76221d)
 ![checkout1](https://github.com/user-attachments/assets/f020255a-d232-4e40-8f35-f8c8d11f0079)
 ![contact](https://github.com/user-attachments/assets/693ae8eb-c704-490f-be03-bde0e9a31302)
 
